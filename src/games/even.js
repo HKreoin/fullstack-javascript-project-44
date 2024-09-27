@@ -1,4 +1,4 @@
-import { check, message } from "../engine.js";
+import { check, message } from "../index.js";
 
 const isEven = (num) => num % 2 === 0;
 
@@ -12,7 +12,7 @@ export default (name) => {
         const number = Math.round(Math.random() * 100);
         const correctAnswer = isEven(number) ? 'yes' : 'no';
         correct = check(number, correctAnswer);
-        message(correct, name, number, correctAnswer);
         i += 1;
+        message(correct, name, number, correctAnswer, i);
     }
 };
