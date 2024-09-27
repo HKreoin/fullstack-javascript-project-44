@@ -1,21 +1,17 @@
 import { question } from 'readline-sync';
 
-const check = (qst, correctAnswer) => {
+export default (name, qst, correctAnswer, end) => {
     console.log(`Question: ${qst}`);
     const answer = question('Your answer: ');
-    return answer == correctAnswer;
-}
-
-const message = (correct, name, answer, correctAnswer, end) => {
+    const correct = answer == correctAnswer;
     if (correct) {
         console.log("Correct!");
         if (end === 3) {
             console.log(`Congratulations, ${name}!`);
         }
     } else {
-        console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
         console.log(`Let's try again, ${name}!`);
     }
+    return correct;
 };
-
-export { check, message};

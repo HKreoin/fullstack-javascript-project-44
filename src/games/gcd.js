@@ -1,4 +1,4 @@
-import { check, message } from "../index.js";
+import check from '../index.js';
 
 const findGcd = (num1, num2) => {
     let nod = 1;
@@ -23,8 +23,7 @@ export default (name) => {
         const number2 = Math.round(Math.random() * 99) + 1;
         const correctAnswer = findGcd(number1, number2);
         const qst = `${number1} ${number2}`; 
-        correct = check(qst, correctAnswer);
         i += 1;
-        message(correct, name, qst, correctAnswer, i);
+        correct = check(name, qst, correctAnswer, i);
     }
 };

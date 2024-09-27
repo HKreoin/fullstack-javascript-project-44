@@ -1,9 +1,9 @@
-import { check, message } from "../index.js";
+import check from '../index.js';
 
 const isEven = (num) => num % 2 === 0;
 
 export default (name) => {
-    const mainQuestion = 'Answer "yes" if the number is even, otherwise answer "no"';
+    const mainQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
     console.log(mainQuestion);
     let correct = true;
     const questionsCount = 3;
@@ -11,8 +11,7 @@ export default (name) => {
     while (correct && i < questionsCount) {
         const number = Math.round(Math.random() * 100);
         const correctAnswer = isEven(number) ? 'yes' : 'no';
-        correct = check(number, correctAnswer);
         i += 1;
-        message(correct, name, number, correctAnswer, i);
+        correct = check(name, number, correctAnswer, i);
     }
 };

@@ -1,4 +1,4 @@
-import { check, message } from "../index.js";
+import check from '../index.js';
 
 const calculate = (num1, num2, operator) => {
     const operations = {
@@ -22,8 +22,7 @@ export default (name) => {
         const operator = ['+', '-', '*'][Math.round(Math.random() * 2)];
         const correctAnswer = calculate(number1, number2, operator);
         const qst = `${number1} ${operator} ${number2}`; 
-        correct = check(qst, correctAnswer);
         i += 1;
-        message(correct, name, qst, correctAnswer, i);
+        correct = check(name, qst, correctAnswer, i);
     }
 };

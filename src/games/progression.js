@@ -1,4 +1,4 @@
-import { check, message } from '../index.js';
+import check from '../index.js';
 import _ from 'lodash';
 
 const genArr = () => {
@@ -10,7 +10,7 @@ const genArr = () => {
 };
 
 export default (name) => {
-    const mainQuestion = 'Find the greatest common divisor of given numbers.';
+    const mainQuestion = 'What number is missing in the progression?';
     console.log(mainQuestion);
     let correct = true;
     const questionsCount = 3;
@@ -21,8 +21,7 @@ export default (name) => {
         const correctAnswer = array[index];
         array[index] = '..';
         const qst = array.join(' '); 
-        correct = check(qst, correctAnswer);
         i += 1;
-        message(correct, name, qst, correctAnswer, i);
+        correct = check(name, qst, correctAnswer, i);
     }
 };
