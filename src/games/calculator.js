@@ -11,7 +11,7 @@ const calculate = (num1, num2, operator) => {
 
 
 export default (name) => {
-    const mainQuestion = 'Answer "yes" if the number is even, otherwise answer "no"';
+    const mainQuestion = 'What is the result of the expression?';
     console.log(mainQuestion);
     let correct = true;
     const questionsCount = 3;
